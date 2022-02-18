@@ -30,7 +30,7 @@ using var client = new SmtpClient(host: "smtp.sendgrid.net", port: 587);
 client.EnableSsl = true; // IMPORTANT to send mails securely
 client.Credentials = new NetworkCredential(
     userName: "apikey", // the userName is the exact string "apikey" and not the API key itself.
-    password: Environment.GetEnvironmentVariable("SendGridApiKey") // password is the API key
+    password: Environment.GetEnvironmentVariable("SENDGRID_API_KEY") // password is the API key
 );
 
 Console.WriteLine("Sending email");
